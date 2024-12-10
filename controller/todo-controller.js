@@ -1,5 +1,15 @@
 import Todo from '../model/Todo.js';
 
+export const connections = async (request, response) => {
+    try {
+        const todos = "it is connected"
+
+        return response.status(200).json(todos);
+    } catch (error) {
+        return response.status(500).json(error.message);
+    }
+}
+
 export const addTodo = async (request, response) => {
     console.log(request.body);
     try {
