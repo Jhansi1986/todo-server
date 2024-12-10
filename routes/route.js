@@ -1,11 +1,11 @@
 import express, { Router } from 'express';
 
 
-import { addTodo, getAllTodos, toggleTodoDone, updateTodo, deleteTodo } from '../controller/todo-controller.js';
+import { addTodo, getAllTodos, toggleTodoDone, updateTodo, deleteTodo, connections} from '../controller/todo-controller.js';
 
 const route = express.Router();
 
-
+route.get('/', connections);
 route.post('/todos', addTodo)
 route.get('/todos', getAllTodos);
 route.get('/todos/:id', toggleTodoDone);
