@@ -5,10 +5,10 @@ dotenv.config();
 
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
-
+const MANGODBURI = process.env.MONGODB_URI;
 const Connection = () => {
 
-    const MONGODB_URI = `mongodb+srv://jhansiks4:${PASSWORD}@cluster0.3tfn7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+    const MONGODB_URI = MANGODBURI;
 
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
